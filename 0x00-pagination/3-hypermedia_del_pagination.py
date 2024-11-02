@@ -1,10 +1,8 @@
+#!/usr/bin/env python3
+"""Deletion-resilient hypermedia pagination
 """
-Deletion-resilient hypermedia pagination
-"""
-
 import csv
-import math
-from typing import List, Dict
+from typing import Dict, List
 
 
 class Server:
@@ -13,6 +11,8 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        """Initializes a new Server instance.
+        """
         self.__dataset = None
         self.__indexed_dataset = None
 
@@ -39,7 +39,7 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """Retrieves information about a page from a given index and with a
+        """Retrieves info about a page from a given index and with a
         specified size.
         """
         data = self.indexed_dataset()
